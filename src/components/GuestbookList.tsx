@@ -3,7 +3,6 @@ import { Search, Image, MessageSquare, Download, Printer, Lock, Unlock, KeyRound
 import { GuestbookEntry, PhotoAttachment } from '../types';
 import { GuestbookCard } from './GuestbookCard';
 import { downloadAllPhotosZip } from '../utils/zipExport';
-import { downloadSourceCodeZip } from '../utils/sourceZip';
 
 interface GuestbookListProps {
   entries: GuestbookEntry[];
@@ -83,7 +82,6 @@ export const GuestbookList: React.FC<GuestbookListProps> = ({
             {totalPhotos > 0 && (
               <button
                 type="button"
-                onClick={handleDownloadZip}
                 disabled={isZipping}
                 className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-amber-950 bg-amber-300 hover:bg-amber-400 border border-amber-400 rounded-xl shadow-2xs transition min-h-[38px] touch-manipulation cursor-pointer disabled:opacity-50"
                 title="Télécharger toutes les photos des invités en un clic (archive ZIP)"
